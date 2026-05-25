@@ -29,49 +29,49 @@ export default function BookDetail() {
   const category = getCategoryBySlug(book.category)
 
   return (
-    <div className="pt-24 pb-16 px-6">
-      <div className="max-w-4xl mx-auto">
+    <div className="pt-24 pb-24 px-6">
+      <div className="max-w-page mx-auto">
         <ScrollReveal>
           <Link
             to={`/category/${book.category}`}
-            className="inline-flex items-center gap-1.5 text-sm text-text-secondary hover:text-accent transition-colors mb-8"
+            className="inline-flex items-center gap-1.5 text-sm text-text-secondary hover:text-accent hover:underline transition-all mb-8"
           >
             <ArrowLeft size={16} /> 返回{category?.name || '分类'}
           </Link>
         </ScrollReveal>
 
-        {/* Book header: cover + info */}
-        <div className="flex flex-col sm:flex-row gap-8 mb-12">
+        {/* Book header */}
+        <div className="flex flex-col sm:flex-row gap-10 mb-14">
           <ScrollReveal>
-            <div className="flex-shrink-0 w-40 sm:w-48">
+            <div className="flex-shrink-0 w-40 sm:w-52">
               <img
                 src={book.cover}
                 alt={book.title}
-                className="w-full rounded-lg shadow-md"
+                className="w-full rounded-xl shadow-md"
               />
             </div>
           </ScrollReveal>
 
           <ScrollReveal className="flex-1">
             <div className="flex flex-col justify-center h-full">
-              <h1 className="text-3xl font-light text-charcoal mb-2 leading-tight">
+              <h1 className="text-3xl sm:text-4xl font-light text-charcoal mb-3 leading-tight tracking-tight">
                 {book.title}
               </h1>
-              <p className="text-text-secondary mb-3">{book.author}</p>
-              <p className="text-sm text-text-secondary mb-4">
+              <p className="text-text-secondary mb-2">{book.author}</p>
+              <p className="text-sm text-text-secondary mb-5">
                 {book.publisher} · {book.year}
               </p>
-              <div className="flex items-center gap-0.5 mb-3">
+              <div className="flex items-center gap-0.5 mb-4">
                 {Array.from({ length: 5 }, (_, i) => (
                   <Star
                     key={i}
                     size={18}
-                    className={i < book.rating ? 'text-amber-400 fill-amber-400' : 'text-gray-300'}
+                    className={i < book.rating ? 'text-amber-400 fill-amber-400' : 'text-gray-200'}
                   />
                 ))}
               </div>
               <p className="text-text-secondary leading-relaxed italic">
-                "{book.summary}"
+                &ldquo;{book.summary}&rdquo;
               </p>
             </div>
           </ScrollReveal>
@@ -79,12 +79,12 @@ export default function BookDetail() {
 
         {/* Reading notes */}
         <ScrollReveal>
-          <h2 className="text-xl font-normal text-charcoal mb-6">读书笔记</h2>
-          <div className="space-y-4">
+          <h2 className="text-xl font-normal text-charcoal mb-8">读书笔记</h2>
+          <div className="space-y-5 max-w-3xl">
             {book.notes.map((note, i) => (
               <p
                 key={i}
-                className="text-text-secondary leading-relaxed pl-4 border-l-2 border-accent/30 hover:border-accent transition-colors"
+                className="text-text-secondary leading-relaxed pl-5 border-l-2 border-accent/25 hover:border-accent/60 transition-colors"
               >
                 {renderNote(note)}
               </p>
@@ -92,11 +92,10 @@ export default function BookDetail() {
           </div>
         </ScrollReveal>
 
-        {/* Back button */}
-        <ScrollReveal className="mt-12">
+        <ScrollReveal className="mt-14">
           <Link
             to={`/category/${book.category}`}
-            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-card-bg text-text-secondary hover:bg-accent/10 hover:text-accent transition-colors"
+            className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-lg bg-card-bg text-text-secondary hover:text-accent hover:bg-accent/10 transition-all"
           >
             <ArrowLeft size={16} /> 返回书单
           </Link>

@@ -14,12 +14,12 @@ export default function CategoryCard({ category, count }) {
   return (
     <Link
       to={`/category/${category.slug}`}
-      className="group block bg-white rounded-xl shadow-sm border border-gray-100 p-6 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-md"
+      className="group block bg-white rounded-xl shadow-sm shadow-gray-200/50 border border-gray-100 p-8 text-center transition-all duration-300 hover:-translate-y-1.5 hover:shadow-md hover:shadow-gray-200/70"
     >
-      <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
-        <Icon size={24} className="text-accent" />
+      <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mx-auto mb-5 group-hover:bg-accent/20 transition-colors">
+        <Icon size={26} className="text-accent" />
       </div>
-      <h3 className="font-medium text-lg text-charcoal mb-1 group-hover:text-accent transition-colors">
+      <h3 className="font-medium text-lg text-charcoal mb-1.5 group-hover:text-accent transition-colors">
         {category.name}
       </h3>
       <p className="text-sm text-text-secondary">

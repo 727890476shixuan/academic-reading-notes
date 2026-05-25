@@ -5,10 +5,10 @@ import { Link } from 'react-router-dom'
 
 export default function About() {
   return (
-    <div className="pt-24 pb-16 px-6">
+    <div className="pt-24 pb-24 px-6">
       <div className="max-w-2xl mx-auto">
         <ScrollReveal>
-          <h1 className="text-3xl font-light text-charcoal mb-8">关于本站</h1>
+          <h1 className="text-3xl font-light text-charcoal mb-10 tracking-tight">关于本站</h1>
         </ScrollReveal>
 
         <ScrollReveal>
@@ -22,13 +22,12 @@ export default function About() {
               我的阅读集中在以下几个领域：
             </p>
 
-            {/* Category links */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {categories.map(cat => (
                 <Link
                   key={cat.slug}
                   to={`/category/${cat.slug}`}
-                  className="flex items-center justify-between p-4 rounded-lg bg-card-bg hover:bg-accent/10 transition-colors group"
+                  className="flex items-center justify-between p-5 rounded-xl bg-card-bg hover:bg-accent/10 transition-colors group"
                 >
                   <span className="text-charcoal group-hover:text-accent transition-colors">
                     {cat.name}
@@ -45,12 +44,12 @@ export default function About() {
               所有书籍信息、封面图片版权归原作者及出版社所有。
             </p>
 
-            <div className="pt-4 border-t border-gray-200">
+            <div className="pt-6 border-t border-gray-200">
               <a
                 href="https://727890476shixuan.github.io/personal-page/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-accent hover:text-accent/80 transition-colors"
+                className="inline-flex items-center gap-1.5 text-accent hover:text-accent/80 hover:underline transition-all"
               >
                 访问我的个人主页 <ExternalLink size={14} />
               </a>

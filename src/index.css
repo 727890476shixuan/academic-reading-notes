@@ -2,17 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Smooth scroll for anchor links */
 html {
   scroll-behavior: smooth;
 }
 
-/* Custom base styles */
 body {
   font-weight: 300;
   line-height: 1.75;
   letter-spacing: 0.01em;
 }
+
+/* Heading hierarchy */
+h1 { @apply text-3xl sm:text-4xl font-light text-charcoal tracking-tight; }
+h2 { @apply text-2xl font-normal text-charcoal; }
+h3 { @apply text-lg font-medium text-charcoal; }
 
 /* Scroll reveal animation */
 .reveal {
@@ -25,6 +28,20 @@ body {
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Back to top button */
+.back-to-top {
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 /* Custom scrollbar */

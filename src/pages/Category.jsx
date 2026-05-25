@@ -19,17 +19,17 @@ export default function Category() {
   }
 
   return (
-    <div className="pt-24 pb-16 px-6">
-      <div className="max-w-6xl mx-auto">
+    <div className="pt-24 pb-24 px-6">
+      <div className="max-w-page mx-auto">
         <ScrollReveal>
           <Link
             to="/"
-            className="inline-flex items-center gap-1.5 text-sm text-text-secondary hover:text-accent transition-colors mb-6"
+            className="inline-flex items-center gap-1.5 text-sm text-text-secondary hover:text-accent hover:underline transition-all mb-8"
           >
             <ArrowLeft size={16} /> 返回首页
           </Link>
-          <h1 className="text-3xl font-light text-charcoal mb-2">{category.name}</h1>
-          <p className="text-text-secondary mb-10">
+          <h1 className="text-3xl font-light text-charcoal mb-2 tracking-tight">{category.name}</h1>
+          <p className="text-text-secondary mb-12">
             共 {bookList.length} 本书籍笔记
           </p>
         </ScrollReveal>

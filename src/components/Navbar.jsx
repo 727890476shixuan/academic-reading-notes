@@ -7,7 +7,7 @@ const navLinks = [
   { path: '/category/economics', label: '经济学' },
   { path: '/category/cross-border-ecommerce', label: '跨境电商' },
   { path: '/category/data-analysis', label: '数据分析' },
-  { path: '/about', label: '关于' },
+  { path: '/category/business-management', label: '商业管理' },
 ]
 
 export default function Navbar() {
@@ -44,25 +44,25 @@ export default function Navbar() {
             : 'bg-transparent'
         }`}
       >
-        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+        <div className="max-w-page mx-auto px-6 h-16 flex items-center justify-between">
           <Link
             to="/"
-            className="flex items-center gap-2 text-charcoal font-medium text-lg tracking-tight hover:text-accent transition-colors"
+            className="flex items-center gap-2 text-charcoal font-medium tracking-tight hover:text-accent transition-colors whitespace-nowrap"
           >
-            <BookOpen size={22} className="text-accent" />
-            <span className="hidden sm:inline">谢施炫的读书笔记</span>
+            <BookOpen size={20} className="text-accent flex-shrink-0" />
+            <span>谢施炫 <span className="text-text-secondary font-light mx-1">|</span> 读书笔记</span>
           </Link>
 
           {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-1">
+          <div className="hidden md:flex items-center gap-0.5">
             {navLinks.map(link => (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`px-3 py-2 rounded-lg text-sm font-normal transition-colors ${
+                className={`px-3 py-1.5 rounded-lg text-sm font-normal transition-colors ${
                   isActive(link.path)
                     ? 'text-accent bg-accent/10'
-                    : 'text-text-secondary hover:text-charcoal hover:bg-card-bg'
+                    : 'text-text-secondary hover:text-accent hover:underline'
                 }`}
               >
                 {link.label}
@@ -104,7 +104,7 @@ export default function Navbar() {
                 className={`px-4 py-3 rounded-lg text-base font-normal transition-colors ${
                   isActive(link.path)
                     ? 'text-accent bg-accent/10'
-                    : 'text-text-secondary hover:text-charcoal hover:bg-card-bg'
+                    : 'text-text-secondary hover:text-accent hover:bg-card-bg'
                 }`}
               >
                 {link.label}

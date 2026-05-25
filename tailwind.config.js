@@ -16,6 +16,9 @@ export default {
       fontFamily: {
         sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
       },
+      maxWidth: {
+        'page': '1200px',
+      },
       transitionProperty: {
         'transform-shadow': 'transform, box-shadow',
       },
