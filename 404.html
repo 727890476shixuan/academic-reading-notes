@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>Redirecting...</title>
+  <script>
+    // Store the attempted path and redirect to the SPA root
+    var path = window.location.pathname.replace(/\/academic-reading-notes/, '') || '/'
+    sessionStorage.setItem('redirect', path)
+    window.location.replace('/academic-reading-notes/')
+  </script>
+</head>
+<body>
+  <p>Redirecting...</p>
+</body>
+</html>
